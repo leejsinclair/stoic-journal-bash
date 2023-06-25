@@ -13,13 +13,30 @@ To use the script, simply run it from the command line. For example:
 
 The script will ask you a series of questions, and it will save your responses to a file called journal.txt. You can then open the file and read your responses at any time.
 
-Dependencies
+## Options
+
+Specify the environment variable `STOIC_JOURNAL_FILE` to specifiy the journal file to use.
+
+Example in bashrc:
+
+```bash
+export STOIC_JOURNAL_FILE=$HOME/Documents/
+```
+
+## Dependencies
+
 The script requires the `jq` binary to be installed. You can install `jq` by running the following command:
 
 ## Ubuntu / Debian
 
-```
+```bash
 sudo apt install jq
+```
+
+OR as a snap:
+
+```bash
+sudo snap install jq
 ```
 
 ## Example

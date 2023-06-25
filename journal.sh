@@ -16,10 +16,11 @@ fi
 
 # Get the current date
 currentDate=$(date +"%Y-%m-%d")
+journalFile=${STOIC_JOURNAL_FILE:-journal.txt}
 
 # Save the answers to a text file
-echo "---" >> journal.txt
-echo "Date: $currentDate" >> journal.txt
+echo "---" >> "$journalFile"
+echo "Date: $currentDate" >> "$journalFile"
 
 # Check if it is morning
 if [[ $currentTime -ge 0600 && $currentTime -le 1159 ]]; then
@@ -40,14 +41,13 @@ if [[ $currentTime -ge 0600 && $currentTime -le 1159 ]]; then
   echo "Today's quote:"
   echo $quote
 
-  echo "Top 3 priorities: 1) $priority1; 2) $priority2; 3) $priority3" >> journal.txt
-  echo "Difficulties: $difficulties" >> journal.txt
-  echo "Grateful: $grateful" >> journal.txt
-  echo "Quote: $quote" >> journal.txt
+  echo "Top 3 priorities: 1) $priority1; 2) $priority2; 3) $priority3" >> "$journalFile"
+  echo "Difficulties: $difficulties" >> "$journalFile"
+  echo "Grateful: $grateful" >> "$journalFile"
+  echo "Quote: $quote" >> "$journalFile"
 else
   # Ask evening questions
   # Read the journal file and find the responses from that morning
-  journalFile="journal.txt"
   priorities=$(cat $journalFile | grep "Top 3 priorities" | tail -1)
   difficulties=$(cat $journalFile | grep "Difficulties" | tail -1)
   grateful=$(cat $journalFile | grep "Grateful" | tail -1)
@@ -69,8 +69,8 @@ else
   echo "(ʘ‿ʘ)╯ What are your intentions for tomorrow?"
   read intentions
 
-  echo "Response: $response" >> journal.txt
-  echo "Learnings: $learnings" >> journal.txt
-  echo "Improvements: $improvements" >> journal.txt
-  echo "Intentions: $intentions" >> journal.txt
+  echo "Response: $response" >> "$journalFile"
+  echo "Learnings: $learnings" >> "$journalFile"
+  echo "Improvements: $improvements" >> "$journalFile"
+  echo "Intentions: $intentions" >> "$journalFile"
 fi
