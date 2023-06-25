@@ -26,24 +26,33 @@ sudo apt install jq
 
 Here is an example of the output that the script produces:
 
-_(ʘ‿ʘ)╯ What are your top 3 priorities for today?_
-_Priority 1:_
+```
+(ʘ‿ʘ)╯ What are your top 3 priorities for today?
+Priority 1:
 Finish project
-_Priority 2:_
+Priority 2:
 Go to the gym
-_Priority 3:_
+Priority 3:
 Spend time with family
-_(ʘ‿ʘ)╯ What difficulties are you likely to encounter today?_
-Traffic, Work meeting, Homework
-_(ʘ‿ʘ)╯ What are you grateful for?_
-My health, My family, My friends
-_Today's Quote:_
-_"The obstacle is the way." - Marcus Aurelius_
 
+(ʘ‿ʘ)╯ What difficulties are you likely to encounter today?
+Traffic, Work meeting, Homework
+
+(ʘ‿ʘ)╯ What are you grateful for?
+My health, My family, My friends
+
+Today's Quote:
+"The obstacle is the way." - Marcus Aurelius
+```
+
+In the afternoon you can try again and the script will display answers from the morning:
+
+```
 Response from morning: I responded to the difficulties I encountered today by staying calm and focused.
 Learnings from morning: I learned that I am stronger than I thought I was.
 Improvements from morning: I could have been more proactive in addressing the difficulties.
 Intentions for tomorrow: I intend to be more mindful of the obstacles in my way and to use them as opportunities to grow.
+```
 
 ## License
 
