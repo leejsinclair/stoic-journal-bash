@@ -5,29 +5,35 @@ This script is a simple journaling tool that helps you reflect on your day and s
 
 Questions in the morning are different to those in the afternoon.
 
-## Usage
+# Installation
 
-To use the script, simply run it from the command line. For example:
+Change the folder `github-projects` to suit your needs.
 
-./stoic_journal.sh
-
-The script will ask you a series of questions, and it will save your responses to a file called journal.txt. You can then open the file and read your responses at any time.
-
-## Options
-
-Specify the environment variable `STOIC_JOURNAL_FILE` to specifiy the journal file to use.
-
-Example in bashrc:
+## Quick setup
 
 ```bash
-export STOIC_JOURNAL_FILE=$HOME/Documents/
+curl https://raw.githubusercontent.com/leejsinclair/stoic-journal-bash/main/setup.sh -o stoic-journal-setup.sh
+chomod +x stoic-journal-setup.sh
+./stoic-journal-setup.sh ~/github-projects
 ```
 
-## Dependencies
+## Manual Setup
+
+```bash
+mkdir -p ~/github-projects/
+git clone https://github.com/leejsinclair/stoic-journal-bash.git
+
+tee -a ~/.bashrc << EOF
+export STOIC_JOURNAL_FILE=$HOME/Documents/
+alias stoic='~/github-projects/stoic-journal-bash/journal.sh'
+EOF
+```
+
+### Dependencies
 
 The script requires the `jq` binary to be installed. You can install `jq` by running the following command:
 
-## Ubuntu / Debian
+#### Ubuntu / Debian
 
 ```bash
 sudo apt install jq
@@ -38,6 +44,32 @@ OR as a snap:
 ```bash
 sudo snap install jq
 ```
+
+#### Fedora
+
+```bash
+sudo dnf update
+sudo dnf install jq
+```
+
+#### Arch
+
+As if Arch masters need instructions.
+
+```bash
+sudo pacman -Syu
+sudo pacman -S jq
+```
+
+## Usage
+
+To use the script, simply run it from the command line. For example:
+
+```bash
+stoic
+```
+
+The script will ask you a series of questions, and it will save your responses to a file called journal.txt. You can then open the file and read your responses at any time.
 
 ## Example
 
