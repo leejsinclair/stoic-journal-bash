@@ -15,7 +15,7 @@ fi
 # Clone the repository
 github_projects_dir=$1
 mkdir -p "$github_projects_dir"
-cd github_projects_dir
+cd $github_projects_dir
 git clone https://github.com/leejsinclair/stoic-journal-bash.git "$github_projects_dir"
 
 # Append the alias to .bashrc

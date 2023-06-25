@@ -21,6 +21,7 @@ chomod +x stoic-journal-setup.sh
 
 ```bash
 mkdir -p ~/github-projects/
+cd ~/github-projects/
 git clone https://github.com/leejsinclair/stoic-journal-bash.git
 
 tee -a ~/.bashrc << EOF
